@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalMonitoring", "MedicalMonitoring.csproj", "{8874AE9A-0559-4736-8EA1-F1E33FA526AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FogNode", "..\FogNode\FogNode.csproj", "{51EBD285-03E3-4409-B166-8D94C4B52A6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8874AE9A-0559-4736-8EA1-F1E33FA526AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8874AE9A-0559-4736-8EA1-F1E33FA526AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8874AE9A-0559-4736-8EA1-F1E33FA526AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8874AE9A-0559-4736-8EA1-F1E33FA526AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51EBD285-03E3-4409-B166-8D94C4B52A6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51EBD285-03E3-4409-B166-8D94C4B52A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51EBD285-03E3-4409-B166-8D94C4B52A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51EBD285-03E3-4409-B166-8D94C4B52A6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9FE72FED-FD4D-476D-A0F7-DB40751D6E01}
+	EndGlobalSection
+EndGlobal
