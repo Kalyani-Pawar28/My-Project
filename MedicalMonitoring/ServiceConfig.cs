@@ -9,20 +9,22 @@ namespace MedicalMonitoring
 {
 	public class ServiceConfig
 	{
-        public static void Register(HttpConfiguration config)
-        {
-            // Web API routes
+		public static void Register(HttpConfiguration config)
+		{
+			// Web API routes
 
-            config.Formatters.Clear();
-            config.Formatters.Add(new JsonMediaTypeFormatter());
+			config.Formatters.Clear();
+			config.Formatters.Add(new JsonMediaTypeFormatter());
 
-            config.MapHttpAttributeRoutes();
+			config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new System.Net.Http.Headers.MediaTypeHeaderValue("text/plain"));
 
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-        }
-    }
+			config.MapHttpAttributeRoutes();
+
+			config.Routes.MapHttpRoute(
+				name: "DefaultApi",
+				routeTemplate: "api/{controller}/{id}",
+				defaults: new { id = RouteParameter.Optional }
+			);
+		}
+	}
 }

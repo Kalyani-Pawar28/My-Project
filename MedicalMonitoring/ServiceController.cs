@@ -16,14 +16,15 @@ namespace MedicalMonitoring
 		}
 
 		// GET api/<controller>/5
-		public string Get(int id)
+		public string Get(String id)
 		{
 			return "value"+id;
 		}
 
 		// POST api/<controller>
-		public void Post([FromBody] string value)
+		public String Post([FromBody] string value)
 		{
+			return "[Received data " + value+"]";
 		}
 
 		// PUT api/<controller>/5

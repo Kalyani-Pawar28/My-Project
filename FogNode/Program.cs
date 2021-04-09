@@ -11,7 +11,6 @@ namespace FogNode
 	class Program
 	{
 		private static bool running = true;
-
 		private const string BASE_URL = "http://localhost:63162/api";
 
 		static void Main(string[] args)
@@ -24,10 +23,10 @@ namespace FogNode
 
 			Console.WriteLine("Fog Node Started");
 
-			while(true)
+			while (true)
 			{
 				string ch = Console.ReadLine();
-				if(ch=="q" || ch=="Q")
+				if (ch == "q" || ch == "Q")
 				{
 					running = false;
 					break;
@@ -36,14 +35,20 @@ namespace FogNode
 			Console.WriteLine("Shutting down fog node");
 		}
 
-		public static void MonitorThread()
+		async public static void MonitorThread()
 		{
 			HttpClient client = new HttpClient();
-			
+
 			while (running)
 			{
 				Console.WriteLine("Reading values");
 				Thread.Sleep(5000);
+
+				StringContent requestdata = new StringContent("abcd1:efgh2");
+				Console.WriteLine("Sending request");
+				HttpResponseMessage result = await client.PostAsync(BASE_URL + "/service", requestdata);
+				String resulttext=await result.Content.ReadAsStringAsync();
+				Console.WriteLine(resulttext);
 			}
 		}
 	}
