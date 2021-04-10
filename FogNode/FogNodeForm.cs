@@ -46,7 +46,7 @@ namespace FogNode
 				try
 				{
 					Console.WriteLine("Reading values");
-					Thread.Sleep(1000);
+					Thread.Sleep(60000);
 
 					int bpm = random.Next(60, 100);
 					float temp = random.Next(9500, 10100) / 100.0f;

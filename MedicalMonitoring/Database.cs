@@ -41,6 +41,22 @@ namespace MedicalMonitoring
 			}
 		}
 
+		public static DataTable GetPatientData(int patientid)
+		{
+			using (var con = Connection)
+			{
+				using (var cmd = con.CreateCommand())
+				{
+					cmd.CommandText = "select * from patientdata where patientid=@patientid order by datetime desc limit 1000";
+					cmd.Parameters.AddWithValue("@patientid", patientid);
+
+					DataTable table = GetDataTable(cmd);
+
+					return table;
+				}
+			}
+		}
+
 		public static DataTable GetDataTable(MySqlCommand command)
 		{
 			using (MySqlDataAdapter a = new MySqlDataAdapter())
