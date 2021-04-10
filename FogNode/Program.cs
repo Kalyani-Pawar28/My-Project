@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FogNode
 {
@@ -14,6 +15,11 @@ namespace FogNode
 		private const string BASE_URL = "http://localhost:63162/api";
 
 		static void Main(string[] args)
+		{
+			Form.CheckForIllegalCrossThreadCalls = false;
+			Application.Run(new FogNodeForm());
+		}
+		static void Main2(string[] args)
 		{
 			Console.WriteLine("Starting Fog Node...");
 

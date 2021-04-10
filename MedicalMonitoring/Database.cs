@@ -23,6 +23,24 @@ namespace MedicalMonitoring
 			}
 		}
 
+		public static void AddEntry(string token, int bpm, float temp, int isnormal)
+		{
+			using (var con = Connection)
+			{
+				using (var cmd = con.CreateCommand())
+				{
+					cmd.CommandText = "insert into patientdata values (0,(select patientid from patient where token=@token), now(), @pulse, @temp, @isnormal)";
+
+					cmd.Parameters.AddWithValue("@token", token);
+					cmd.Parameters.AddWithValue("@pulse", bpm);
+					cmd.Parameters.AddWithValue("@temp", temp);
+					cmd.Parameters.AddWithValue("@isnormal", isnormal);
+
+					cmd.ExecuteNonQuery();
+				}
+			}
+		}
+
 		public static DataTable GetDataTable(MySqlCommand command)
 		{
 			using (MySqlDataAdapter a = new MySqlDataAdapter())
@@ -38,7 +56,7 @@ namespace MedicalMonitoring
 		{
 			using (var con = Connection)
 			{
-				using(var cmd=con.CreateCommand())
+				using (var cmd = con.CreateCommand())
 				{
 					cmd.CommandText = "select doctorid, name from doctor where username=@username and passwordhash=password(@password)";
 					cmd.Parameters.AddWithValue("@username", username);
@@ -86,11 +104,11 @@ namespace MedicalMonitoring
 		public static String GenerateToken()
 		{
 			Random random = new Random();
-			StringBuilder sb=new StringBuilder();
-			for(int i=0;i<10;i++)
+			StringBuilder sb = new StringBuilder();
+			for (int i = 0; i < 10; i++)
 			{
 				int type = random.Next(3);
-				switch(type)
+				switch (type)
 				{
 					case 0:
 						sb.Append((char)random.Next(48, 58)); break;
