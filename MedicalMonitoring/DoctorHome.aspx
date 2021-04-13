@@ -8,7 +8,7 @@
 
         <h3>Patient List</h3>
 
-        <asp:GridView runat="server" ID="gridview_patients" AutoGenerateColumns="false">
+        <asp:GridView runat="server" ID="gridview_patients" AutoGenerateColumns="false" CssClass="table">
             <Columns>
 
                 <asp:BoundField DataField="name" HeaderText="Name"  />
@@ -18,7 +18,7 @@
                 <asp:BoundField DataField="contact" HeaderText="Contact" />
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <a href="/ViewPatientData.aspx?patientid=<%#Eval("patientid") %>"
+                        <a href="/ViewPatientData.aspx?patientid=<%#Eval("patientid") %>">View Data</a>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

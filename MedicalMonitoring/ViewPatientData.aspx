@@ -1,13 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PatientHome.aspx.cs" Inherits="MedicalMonitoring.PatientHome" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewPatientData.aspx.cs" Inherits="MedicalMonitoring.ViewPatientData" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Welcome <%=Session["name"] %></h2>
-    <div>
-        Token : <%=Session["token"] %> (Use this token in monitoring app)
-    </div>
-
-        <div id="chart" style="width: 100%; height: 400px"></div>
+            <div id="chart" style="width: 100%; height: 400px"></div>
 
 
     <asp:GridView runat="server" ID="gridviewData" AutoGenerateColumns="false" CssClass="table">
@@ -71,8 +65,6 @@
             chart.draw(data, options);
         }
     </script>
-
-
 
 
 </asp:Content>

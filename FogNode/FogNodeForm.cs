@@ -132,7 +132,6 @@ namespace FogNode
 					string value2 = data.Substring(11, 2);     // heartbeat value
 
 					return new object[] { int.Parse(value2), float.Parse(value1) };
-
 				}
 				catch (Exception ex)
 				{

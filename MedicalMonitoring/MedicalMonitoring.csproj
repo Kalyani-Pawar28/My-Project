@@ -279,6 +279,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="ViewPatientData.aspx" />
     <Content Include="WelcomeDoctorPage.aspx" />
     <Content Include="WelcomePage.aspx" />
     <Content Include="HomePage.aspx" />
@@ -449,6 +450,13 @@
     </Compile>
     <Compile Include="ViewMyDetails.aspx.designer.cs">
       <DependentUpon>ViewMyDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPatientData.aspx.cs">
+      <DependentUpon>ViewPatientData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPatientData.aspx.designer.cs">
+      <DependentUpon>ViewPatientData.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewPatientDetails.aspx.cs">
       <DependentUpon>ViewPatientDetails.aspx</DependentUpon>

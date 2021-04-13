@@ -13,6 +13,7 @@ namespace MedicalMonitoring
 		//private static String scon = @"datasource=localhost;port=3306;username=root;password=admin;database=iothealthdatabase";
 		private static String scon = @"datasource=localhost;port=3306;username=root;password=root;database=health";
 
+
 		public static MySqlConnection Connection
 		{
 			get
@@ -136,5 +137,32 @@ namespace MedicalMonitoring
 			}
 			return sb.ToString();
 		}
+
+		public static DataTable GetAllPatients()
+		{
+			using (var con = Connection)
+			{
+				using (var cmd = con.CreateCommand())
+				{
+					cmd.CommandText = "select * from patient";
+					DataTable table = GetDataTable(cmd);
+					return table;
+				}
+			}
+		}
+		public static DataTable GetPatientFromToken(String token)
+		{
+			using (var con = Connection)
+			{
+				using (var cmd = con.CreateCommand())
+				{
+					cmd.CommandText = "select * from patient where token=@token";
+					cmd.Parameters.AddWithValue("@token", token);
+					DataTable table = GetDataTable(cmd);
+					return table;
+				}
+			}
+		}
 	}
+
 }
